@@ -20,7 +20,7 @@ export async function runSelfTest() {
   if (!report.includes('Monthly Recurring Revenue')) {
     throw new Error('Expected core metric to be included in report.');
   }
-  if (report.includes(baseEnvironment.apiUrl) && !report.includes('Growth Ops Dashboard')) {
+  if (report.includes(baseEnvironment.apiUrl)) {
     throw new Error('Base environment leaked incorrectly.');
   }
 }
