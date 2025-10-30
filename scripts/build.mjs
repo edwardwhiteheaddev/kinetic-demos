@@ -28,12 +28,52 @@ function stripTypeAnnotations(code) {
   result = result.replace(/import\s+type\s+{[^}]+}\s+from\s+['\"][^'\"]+['\"];?\s*/g, '');
   result = result.replace(/export\s+type\s+[^;]+;\s*/g, '');
   result = result.replace(/type\s+[^;]+;\s*/g, '');
-  result = result.replace(/export\s+interface[\s\S]+?\n}\n?/g, '');
-  result = result.replace(/interface[\s\S]+?\n}\n?/g, '');
+  result = removeInterfaces(result);
   result = result.replace(/\sas\s+[A-Za-z0-9_<>&\[\]\s'"|]+/g, '');
   return result;
 }
 
+// Remove TypeScript interface declarations, including those with nested braces
+function removeInterfaces(code) {
+  let result = '';
+  let i = 0;
+  const len = code.length;
+  while (i < len) {
+    // Find next 'interface' keyword (optionally preceded by 'export')
+    const match = code.slice(i).match(/(?:export\s+)?interface\s+[A-Za-z0-9_]+/);
+    if (!match) {
+      result += code.slice(i);
+      break;
+    }
+    const start = i + match.index;
+    // Add code before the interface
+    result += code.slice(i, start);
+    // Find the opening brace '{'
+    let braceIdx = code.indexOf('{', start);
+    if (braceIdx === -1) {
+      // Malformed interface, just skip the keyword
+      i = start + match[0].length;
+      continue;
+    }
+    // Now, find the matching closing brace
+    let depth = 0;
+    let end = braceIdx;
+    for (; end < len; end++) {
+      if (code[end] === '{') depth++;
+      else if (code[end] === '}') {
+        depth--;
+        if (depth === 0) {
+          end++; // include the closing brace
+          // Optionally include trailing newline(s)
+          while (end < len && (code[end] === '\n' || code[end] === '\r')) end++;
+          break;
+        }
+      }
+    }
+    i = end;
+  }
+  return result;
+}
 function emitDts(packageName, code) {
   return `// Auto-generated type definitions for ${packageName}\n${code}`;
 }
