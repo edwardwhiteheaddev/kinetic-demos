@@ -1,0 +1,53 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      turbo:
+        specifier: workspace:*
+        version: link:packages/turbo
+
+  apps/dashboard:
+    dependencies:
+      '@growthops/config':
+        specifier: workspace:*
+        version: link:../../packages/config
+      '@growthops/types':
+        specifier: workspace:*
+        version: link:../../packages/types
+      '@growthops/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
+
+  apps/ops-portal:
+    dependencies:
+      '@growthops/config':
+        specifier: workspace:*
+        version: link:../../packages/config
+      '@growthops/types':
+        specifier: workspace:*
+        version: link:../../packages/types
+
+  packages/config:
+    dependencies:
+      '@growthops/types':
+        specifier: workspace:*
+        version: link:../types
+
+  packages/turbo: {}
+
+  packages/types: {}
+
+  packages/ui:
+    dependencies:
+      '@growthops/config':
+        specifier: workspace:*
+        version: link:../config
+      '@growthops/types':
+        specifier: workspace:*
+        version: link:../types
