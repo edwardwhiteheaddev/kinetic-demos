@@ -1,0 +1,9 @@
+{
+  "name": "turbo",
+  "version": "0.0.0-local",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "turbo": "bin/cli.js"
+  }
+}

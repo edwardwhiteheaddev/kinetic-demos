@@ -1,0 +1,20 @@
+{
+  "name": "@growthops/ui",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node ../../scripts/build.mjs",
+    "lint": "node ../../scripts/lint.mjs",
+    "test": "node ../../scripts/test.mjs",
+    "dev": "node ../../scripts/dev.mjs"
+  },
+  "dependencies": {
+    "@growthops/config": "workspace:*",
+    "@growthops/types": "workspace:*"
+  }
+}
