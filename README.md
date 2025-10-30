@@ -12,7 +12,7 @@ pnpm install
 
 * `pnpm build` – Run the aggregated build across every workspace using the custom Turborepo pipeline.
 * `pnpm lint` – Validate TypeScript project references and required workspace structure.
-* `pnpm test` – Execute smoke tests against the generated build artefacts.
+* `pnpm test` – Execute smoke tests against the generated build artifacts.
 * `pnpm dev` – Print local development guidance for each workspace.
 
 ### Workspace layout
