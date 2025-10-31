@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "lib": ["ES2023", "DOM"],
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@shared/*": ["packages/shared/src/*"],
+      "@ui/*": ["packages/ui/src/*"]
+    }
+  },
+  "include": ["apps", "packages", "docs", "*.d.ts"],
+  "references": [
+    { "path": "packages/shared" },
+    { "path": "packages/ui" }
+  ]
+}
