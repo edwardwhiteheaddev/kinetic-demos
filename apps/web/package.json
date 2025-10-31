@@ -1,0 +1,36 @@
+{
+  "name": "@ceo/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ceo/shared": "workspace:*",
+    "@ceo/ui": "workspace:*",
+    "@mantine/core": "7.12.0",
+    "@mantine/hooks": "7.12.0",
+    "@mantine/next": "7.12.0",
+    "@tabler/icons-react": "3.1.0",
+    "next": "15.0.0-canary.120",
+    "next-seo": "6.2.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "6.4.2",
+    "@testing-library/react": "14.2.1",
+    "@types/node": "20.12.7",
+    "@types/react": "18.2.24",
+    "@types/react-dom": "18.2.11",
+    "eslint-config-next": "15.0.0-canary.120",
+    "tsup": "8.0.1",
+    "vitest": "1.4.0"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "ceo-dashboard",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@9.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "e2e": "turbo run e2e",
+    "typecheck": "turbo run typecheck",
+    "zip": "bash -c \"rm -f ceo_dashboard_project.zip && zip -r ceo_dashboard_project.zip . -x '*.git*' 'node_modules/*'\""
+  },
+  "devDependencies": {
+    "@types/node": "20.12.7",
+    "eslint": "8.57.0",
+    "eslint-config-next": "15.0.0-canary.120",
+    "husky": "^9.0.0",
+    "lint-staged": "^15.0.0",
+    "prettier": "3.2.5",
+    "turbo": "^2.0.0",
+    "typescript": "5.4.5"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json,md}": "prettier --write"
+  }
+}
