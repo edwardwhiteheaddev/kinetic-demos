@@ -1,0 +1,79 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Tenant {
+  id        String   @id @default(cuid())
+  name      String
+  users     User[]
+  templates Template[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  tenant    Tenant   @relation(fields: [tenantId], references: [id])
+  tenantId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Template {
+  id          String            @id @default(cuid())
+  name        String
+  description String
+  tenant      Tenant            @relation(fields: [tenantId], references: [id])
+  tenantId    String
+  instances   TemplateInstance[]
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+}
+
+model TemplateInstance {
+  id         String     @id @default(cuid())
+  template   Template   @relation(fields: [templateId], references: [id])
+  templateId String
+  data       Json
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+  kpis       KPIMetric[]
+  actionItems ActionItem[]
+}
+
+model KPIMetric {
+  id                 String           @id @default(cuid())
+  name               String
+  value              Float
+  templateInstance   TemplateInstance @relation(fields: [templateInstanceId], references: [id])
+  templateInstanceId String
+  dataPoints         DataPoint[]
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+}
+
+model DataPoint {
+  id         String    @id @default(cuid())
+  kpi        KPIMetric @relation(fields: [kpiId], references: [id])
+  kpiId      String
+  value      Float
+  timestamp  DateTime
+  createdAt  DateTime  @default(now())
+}
+
+model ActionItem {
+  id                 String           @id @default(cuid())
+  description        String
+  completed          Boolean          @default(false)
+  templateInstance   TemplateInstance @relation(fields: [templateInstanceId], references: [id])
+  templateInstanceId String
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+}
