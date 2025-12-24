@@ -1,0 +1,71 @@
+{
+  "business": {
+    "name": "Paws and Claws Ormonde",
+    "category": "Pet Store",
+    "city": "Ormonde",
+    "region": "Gauteng",
+    "country": "South Africa",
+    "phone": "+27680810195",
+    "address": "Shop 5E Ormonde Shopping Centre, Ormonde, 2091, South Africa",
+    "hours": "Mon-Sat: 9:00 - 18:30",
+    "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.732!2d28.0!3d-26.0!2m3!1f0!2f0!3f0!3m2!1sen!2sza!4v123"
+  },
+  "navigation": [
+    { "label": "Home", "href": "/" },
+    { "label": "Services", "href": "/services" },
+    { "label": "About", "href": "/about" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "seo": {
+    "home": {
+      "title": "Paws and Claws Ormonde | Playful Pet Store in Ormonde, South Africa",
+      "description": "Pet store in Ormonde with grooming, nutrition, toys, and friendly advice. Visit Paws and Claws for local, pet-loving care.",
+      "keywords": ["Ormonde pet store", "pet grooming Ormonde", "pet supplies Ormonde", "Paws and Claws Ormonde", "pet toys South Africa"]
+    },
+    "services": {
+      "title": "Pet Services in Ormonde | Grooming, Nutrition, Toys & Training",
+      "description": "See Paws and Claws Ormonde services: gentle grooming, curated nutrition, engaging toys, adoptions, training basics, and local delivery.",
+      "keywords": ["Ormonde pet grooming", "pet nutrition Ormonde", "pet training Ormonde", "pet adoption Ormonde", "pet delivery Ormonde"]
+    },
+    "about": {
+      "title": "About Paws and Claws Ormonde | Local Pet Lovers",
+      "description": "Meet the Ormonde team behind Paws and Claws. Our mission: joyful, healthy pets and a connected pet community in Ormonde.",
+      "keywords": ["Paws and Claws story", "Ormonde pet community", "local pet store Ormonde"]
+    },
+    "contact": {
+      "title": "Visit Paws and Claws Ormonde | Contact & Location",
+      "description": "Find Paws and Claws Ormonde at Shop 5E Ormonde Shopping Centre. Call +27 68 081 0195. Open Mon-Sat 9:00 - 18:30.",
+      "keywords": ["Paws and Claws contact", "pet store Ormonde address", "pet shop hours Ormonde"]
+    }
+  },
+  "hero": {
+    "primaryCtaLabel": "Book a playdate",
+    "primaryCtaHref": "/contact",
+    "secondaryCtaLabel": "Explore services",
+    "secondaryCtaHref": "/services"
+  },
+  "contentPaths": {
+    "home": {
+      "hero": "home/hero.md",
+      "value": "home/value.md",
+      "social": "home/social-proof.md"
+    },
+    "services": [
+      { "id": "grooming", "markdown": "services/grooming.md" },
+      { "id": "nutrition", "markdown": "services/nutrition.md" },
+      { "id": "toys", "markdown": "services/toys.md" },
+      { "id": "training", "markdown": "services/training.md" },
+      { "id": "adoption", "markdown": "services/adoption.md" },
+      { "id": "delivery", "markdown": "services/delivery.md" }
+    ],
+    "about": {
+      "mission": "about/mission.md",
+      "story": "about/story.md",
+      "community": "about/community.md"
+    },
+    "contact": {
+      "info": "contact/info.md",
+      "hours": "contact/hours.md"
+    }
+  }
+}
