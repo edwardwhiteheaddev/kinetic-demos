@@ -1,0 +1,27 @@
+{
+  "home": [
+    { "id": "hero", "source": "home.md", "description": "Headline, value prop, CTA, social tagline" },
+    { "id": "value", "source": "home.md", "description": "Reasons to choose Plaza Pets" },
+    { "id": "social-proof", "source": "home.md", "description": "Local testimonials" },
+    { "id": "services-teaser", "source": "home.md", "description": "Service highlights and chips" },
+    { "id": "cta", "source": "home.md", "description": "Storewide call-to-action" }
+  ],
+  "services": [
+    { "id": "intro", "source": "services.md", "description": "Service overview" },
+    { "id": "grooming", "source": "services.md", "description": "Grooming packages" },
+    { "id": "supplies", "source": "services.md", "description": "Supplies and nutrition" },
+    { "id": "adoption", "source": "services.md", "description": "Adoption help" },
+    { "id": "delivery", "source": "services.md", "description": "Delivery and support" },
+    { "id": "faq", "source": "services.md", "description": "Frequently asked questions" }
+  ],
+  "about": [
+    { "id": "mission", "source": "about.md", "description": "Mission statement" },
+    { "id": "story", "source": "about.md", "description": "Background story" },
+    { "id": "community", "source": "about.md", "description": "Community impact" }
+  ],
+  "contact": [
+    { "id": "contact", "source": "contact.md", "description": "Phone, WhatsApp, email" },
+    { "id": "location", "source": "contact.md", "description": "Address and map" },
+    { "id": "hours", "source": "contact.md", "description": "Opening hours" }
+  ]
+}
