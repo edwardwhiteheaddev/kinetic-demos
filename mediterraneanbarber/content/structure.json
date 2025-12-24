@@ -1,0 +1,37 @@
+{
+  "home": {
+    "sections": [
+      {"id": "hero", "type": "hero", "source": "home.md:hero"},
+      {"id": "valueProps", "type": "features", "source": "home.md:valueProps"},
+      {"id": "servicesPreview", "type": "services", "source": "home.md:servicesPreview"},
+      {"id": "experience", "type": "list", "source": "home.md:experience"},
+      {"id": "cta", "type": "cta", "source": "home.md:cta"}
+    ]
+  },
+  "services": {
+    "sections": [
+      {"id": "cuts", "type": "collection", "source": "services.md:sections[0]"},
+      {"id": "shaves", "type": "collection", "source": "services.md:sections[1]"},
+      {"id": "addons", "type": "collection", "source": "services.md:sections[2]"},
+      {"id": "benefits", "type": "highlights", "source": "services.md:benefits"}
+    ]
+  },
+  "about": {
+    "sections": [
+      {"id": "mission", "type": "statement", "source": "about.md:mission"},
+      {"id": "story", "type": "story", "source": "about.md:story"},
+      {"id": "community", "type": "impact", "source": "about.md:community"},
+      {"id": "reasons", "type": "reasons", "source": "about.md:reasons"}
+    ]
+  },
+  "contact": {
+    "sections": [
+      {"id": "contact-card", "type": "contact", "source": "contact.md:address/phone/hours"},
+      {"id": "map", "type": "map", "source": "contact.md:mapEmbed"},
+      {"id": "cta", "type": "cta", "source": "contact.md:cta"}
+    ]
+  },
+  "seo": {
+    "notes": "SEO titles, meta descriptions, and keywords are defined in each page's frontmatter within markdown and consumed by lib/content." 
+  }
+}
